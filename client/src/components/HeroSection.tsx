@@ -21,18 +21,26 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-purple-50 to-blue-50 py-16 md:py-24 lg:py-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+    <section className="relative overflow-hidden py-16 md:py-24 lg:py-32">
+      <div className="absolute inset-0">
+        <img
+          src="/mainbg1.png"
+          alt="Fabulous app inspiration background"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-background/70 to-blue-900/80" />
+      </div>
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
           Find Your Ultimate Daily Routine and Make it Stick
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto">
           Backed by behavioral science, Fabulous is an accountability partner in your pocket to help
           you make smart changes and build healthy habits. Ready to take your life to the next level?
         </p>
 
         <div className="max-w-md mx-auto mb-8">
-          <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4">
+          <h2 className="text-xl md:text-2xl font-semibold text-white mb-4">
             How can Fabulous help you?
           </h2>
           <div className="relative">
@@ -61,8 +69,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <Button 
-          size="lg" 
+        <Button
+          size="lg"
           className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 text-lg rounded-md"
           data-testid="button-start-journey"
         >
