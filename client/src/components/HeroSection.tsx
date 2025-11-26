@@ -10,6 +10,13 @@ const options = [
   "All of the above"
 ];
 
+const navItems = [
+  { label: "Product", href: "#product" },
+  { label: "AI Coach", href: "#coach" },
+  { label: "Community", href: "#community" },
+  { label: "SOS Support", href: "#sos" },
+];
+
 export default function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("");
@@ -21,7 +28,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 lg:py-32">
+    <section className="relative overflow-hidden min-h-screen">
       <div className="absolute inset-0">
         <img
           src="/mainbg1.png"
@@ -29,18 +36,50 @@ export default function HeroSection() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white drop-shadow">
+      
+      {/* Navigation overlaid on background */}
+      <nav className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <a href="/" data-testid="link-logo" className="flex items-center gap-2">
+          <img
+            src="/logoria.gif"
+            alt="Ria logo"
+            className="h-[68px] w-[68px] object-contain"
+          />
+          <span className="text-2xl font-bold text-white drop-shadow">Ria</span>
+        </a>
+        <div className="hidden md:flex items-center gap-6 md:gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-white/90 hover:text-white transition-colors text-sm md:text-base font-medium drop-shadow"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="https://forms.gle/ria-demo"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-2 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
+            data-testid="link-signin"
+          >
+            Request demo
+          </a>
+        </div>
+        <a
+          href="https://forms.gle/ria-demo"
+          className="md:hidden inline-flex items-center rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-2 text-sm font-semibold text-white"
+        >
+          Demo
+        </a>
+      </nav>
+
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white drop-shadow py-16 md:py-24 lg:py-32">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 text-sm font-semibold text-white ring-1 ring-white/30 mb-6 backdrop-blur">
           Agentic AI Recovery · Hackathon Showcase
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Meet Ria — your proactive AI companion that keeps you ahead of relapse
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 leading-tight">
+          Meet Ria your proactive AI companion that keeps you ahead of relapse
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-          Ria learns your mood dips, risky hours, and device triggers to adapt recovery plans automatically.
-          It checks in before cravings swell, deploys SOS resources, and brings accountability partners
-          into the loop without waiting to be asked.
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 text-left">
           {[

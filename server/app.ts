@@ -100,6 +100,8 @@ export default async function runApp(
   }
 
   server.listen(listenOptions, () => {
+    const localUrl = `http://localhost:${port}`;
     log(`serving on port ${port}`);
+    console.log(`\n  ➜  Local:   ${localUrl}\n`);
   });
 }
