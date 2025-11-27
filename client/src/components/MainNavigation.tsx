@@ -1,8 +1,7 @@
 const navItems = [
-  { label: "Product", href: "#product" },
-  { label: "AI Coach", href: "#coach" },
-  { label: "Community", href: "#community" },
-  { label: "SOS Support", href: "#sos" },
+  { label: "Leaderboard", href: "/leaderboard" },
+  { label: "Agent", href: "/agent" },
+  { label: "How It Works", href: "/about" },
 ];
 
 export default function MainNavigation() {
@@ -14,8 +13,8 @@ export default function MainNavigation() {
             R
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-base font-semibold text-white drop-shadow">Ria Recovery</span>
-            <span className="text-xs uppercase tracking-[0.25em] text-white/80 drop-shadow">Agentic AI</span>
+            <span className="text-base font-semibold text-white drop-shadow">Ria Wellness</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-white/80 drop-shadow">AI Companion</span>
           </div>
         </a>
         <div className="hidden md:flex items-center gap-6 md:gap-8">
@@ -29,18 +28,18 @@ export default function MainNavigation() {
             </a>
           ))}
           <a
-            href="https://forms.gle/ria-demo"
+            href="/signin"
             className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-2 text-sm font-semibold text-white hover:bg-white/20 transition-colors"
             data-testid="link-signin"
           >
-            Request demo
+            Sign In
           </a>
         </div>
         <a
-          href="https://forms.gle/ria-demo"
+          href="/signin"
           className="md:hidden inline-flex items-center rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-2 text-sm font-semibold text-white"
         >
-          Demo
+          Sign In
         </a>
       </div>
     </nav>
